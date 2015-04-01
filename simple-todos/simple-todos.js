@@ -6,7 +6,7 @@ if (Meteor.isClient) {
   Template.body.helpers({
     tasks: function () {
       if (Session.get("hideCompleted")) {
-        return Tasks.find({checked: {$ne: true}}, {sort: {createdAd: -1}});
+        return Tasks.find({checked: {$ne: true}}, {sort: {createdAt: -1}});
       } else {
         return Tasks.find({}, {sort: {createdAt: -1}});
       }
